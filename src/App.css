@@ -1,38 +1,204 @@
 .App {
+  height: 100vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 90%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Todo */
+
+.todo-wrapper {
+  margin: 0 auto;
+  max-width: 750px;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-title {
+  margin-bottom: 40px;
+  padding-top: 20px;
+  font-size: 44px;
+  letter-spacing: 4px;
+  color: rgb(67, 62, 62);
+}
+
+.todo-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px 10px 6px;
+  background-color: #9d9ea1;
+  border-radius: 12px;
+  transition: background-color 0.1s ease-in;
+}
+
+.todo-form:hover {
+  background-color: grey;
+}
+
+.todo-f {
+  width: 500px;
+}
+
+.todo-form__input {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.todo-form__btn {
+  background-color: #646ff0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #ecedf6;
+  border-radius: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-buttons {
+  height: auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.todo-buttons:hover {
+  transform: scale(1.05);
+}
+
+.btn-delete-modal {
+  background-color: red;
+  color: white;
+}
+
+.btn-cancel-modal {
+  margin-left: 20px;
+  background-color: #646ff0;
+  color: white;
+}
+
+/* List */
+
+.list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.list__item {
+  margin-bottom: 20px;
+}
+
+.list__item:last-child {
+  margin-bottom: 0;
+}
+
+.list__item p {
+  font-size: 18px;
+  font-weight: 500;
+  word-break: break-all;
+  text-align: left;
+}
+
+/* Task */
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+
+  background: white;
+  border-radius: 4px;
+}
+
+.task-fulfilled {
+  background: rgb(206, 201, 201);
+}
+
+.task-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.task-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.task-input {
+  width: 100%;
+  height: 24px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.task__wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.task__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  align-items: center;
+}
+
+.task-btn {
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.task-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: scale(0);
+}
+
+.modal.active {
+  transform: scale(1);
+}
+
+.modal__content {
+  height: 140px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 20px 10px;
+  border-radius: 12px;
+  background-color: white;
 }
